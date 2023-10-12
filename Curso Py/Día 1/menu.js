@@ -3,7 +3,7 @@ var contenidoMenuResultado = document.querySelector("#navbarID");
 contenidoMenuResultado.innerHTML += `<nav class="navbar navbar-expand-md navbar-dark bg-dark">
 <div class="container-fluid">
   <!--icono-->
-  <a class="navbar-brand" href="Index.html">
+  <a class="navbar-brand" href="ListaProductos.html">
      <img src="imagenes/horizontal_yellow_logo.png" class="img-fluid" style="max-width: 200px; height: auto;">
     
   </a>
@@ -22,14 +22,15 @@ contenidoMenuResultado.innerHTML += `<nav class="navbar navbar-expand-md navbar-
   <div class="collapse navbar-collapse" id="menu">
     <ul class="navbar-nav" style="margin-left: 50px;">
       <li class="nav-item">
-        <a class="nav-link active" href="Index.html">Inicio</a>
+        <a class="nav-link active" href="ListaProductos.html">Inicio</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link active" href="Index.html">Lista de usuarios</a>
+        <a class="nav-link active" href="ListaUsuarios.html">Lista de usuarios</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link active" href="Index.html">Lista de productos</a>
+        <a class="nav-link active" href="ListaProductos.html">Lista de productos</a>
       </li>
+      
     </ul>
   </div>
 </div>
