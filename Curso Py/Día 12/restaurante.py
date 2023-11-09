@@ -5,7 +5,7 @@ aplicacion = Tk()
 
 # tamaño de la ventana
 
-aplicacion.geometry('1060x560+0+0')
+aplicacion.geometry('1300x560+0+0')
 
 # evitar maximizar ventana
 aplicacion.resizable(False, False)
@@ -55,15 +55,15 @@ panel_derecha.pack(side=RIGHT)
 
 
 # panel calculadora
-panel_calculadora = Frame(panel_comidas, bd=1, relief=FLAT, bg='burlywood')
+panel_calculadora = Frame(panel_derecha, bd=1, relief=FLAT, bg='burlywood')
 panel_calculadora.pack()
 
 # panel reciibo
-panel_reciibo = Frame(panel_comidas, bd=1, relief=FLAT, bg='burlywood')
+panel_reciibo = Frame(panel_derecha, bd=1, relief=FLAT, bg='burlywood')
 panel_reciibo.pack()
 
 # panel botones
-panel_botones = Frame(panel_comidas, bd=1, relief=FLAT, bg='burlywood')
+panel_botones = Frame(panel_derecha, bd=1, relief=FLAT, bg='burlywood')
 panel_botones.pack()
 
 
@@ -302,5 +302,69 @@ texto_total = Entry(panel_costos,
 
 texto_total.grid(row=2, column=3, padx=41)
 
+
+# botones
+
+botones = ['total', 'recibo', 'guardar', 'resetear']
+columnas = 0
+for boton in botones:
+    boton = Button(panel_botones,
+                   text=boton.title(),
+                   font=('Dosis', 14, 'bold'),
+                   fg='white',
+                   bg='azure4',
+                   bd=1,
+                   width=9)
+
+    boton.grid(row=0,
+               column=columnas)
+    columnas += 1
+
+
+# area de recibo
+texto_recibo = Text(panel_reciibo,
+                    font=('Dosis', 12, 'bold'),
+                    bd=1,
+                    width=42,
+                    height=10)
+texto_recibo.grid(row=0, column=0)
+
+
+# calculadora
+
+calculadora = Entry(panel_calculadora,
+                    font=('Dosis', 16, 'bold'),
+                    width=32,
+                    bd=1)
+
+calculadora.grid(row=0,
+                 column=0,
+                 rowspan=4)
+
+botones_calculadora = ['7', '8', '9', '+'
+                       '4', '5', '6', '-'
+                       '1', '2', '3', 'x'
+                       'R', 'B', '0', '/']
+
+fila = 1
+columna = 0
+
+for boton in botones_calculadora:
+    boton = Button(panel_calculadora,
+                   text=boton.title(),
+                   font=('Dosis', 16, 'bold'),
+                   fg='white',
+                   bg='azure4',
+                   width=10)
+    boton.grid(row=fila,
+               column=columna)
+
+    if columna == 3:
+        fila += 1
+
+    columna += 1
+
+    if columna == 4:
+        columna = 0
 # subtotalvitar que la pantalla se cierre
 aplicacion.mainloop()
