@@ -11,7 +11,15 @@ for pagina in range(1, 51):
     resul = requests.get(url_pagina)
     sopa = bs4.BeautifulSoup(resul.text, 'lxml')
 
+    libros = sopa.select('.product_pod')
 
-libros = sopa.select('.product_pod')
+    for libro in libros:
+        if len(libro.select('.star-rating-Four')) != 0 or len(libro.select('.star-rating-Five')):
 
-ejemplo = libros[0].select('a')[1]['title']
+            titulo_libro = libro.select('a')[1]['title']
+
+            titulos_rating_alto.append(titulo_libro)
+
+
+for t in titulos_rating_alto:
+    print(t)
